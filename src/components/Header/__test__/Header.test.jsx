@@ -8,3 +8,11 @@ it('renders the <Header /> component', () => {
 
   expect(headingElement).toBeInTheDocument();
 });
+
+it('renders the <Header /> component using getByRole', () => {
+  render(<Header title="Todo" />);
+
+  const headingElement = screen.getByRole('heading', { name: /todo/i });
+
+  expect(headingElement).toBeInTheDocument();
+});
